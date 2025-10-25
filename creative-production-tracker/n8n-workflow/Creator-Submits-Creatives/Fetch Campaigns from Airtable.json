@@ -1,0 +1,123 @@
+{
+  "name": "Fetch Campaigns from Airtable",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "=get-campaigns",
+        "responseMode": "lastNode",
+        "options": {
+          "allowedOrigins": "Access-Control-Allow-Origin : *"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "15fe1469-e553-4cb5-9533-22498f47d0bb",
+      "name": "Webhook",
+      "webhookId": "5ae6393e-aa10-41d8-95c5-bf3adcd60437"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app1n6xH9LXVtj9Jd",
+          "mode": "list",
+          "cachedResultName": "Creative Submission Tracker",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tble6lr7cW36zgmua",
+          "mode": "list",
+          "cachedResultName": "Creative Briefs",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd/tble6lr7cW36zgmua"
+        },
+        "filterByFormula": "={Assigned Email Id} = \"{{ $json.query.email }}\"",
+        "options": {
+          "fields": [
+            "Campaign"
+          ]
+        },
+        "sort": {
+          "property": [
+            {
+              "field": "Campaign"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "992594b2-3511-48d8-b84e-a9c1d8dc25e3",
+      "name": "Search records",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "ifIfK8xD5lLhQnLi",
+          "name": "Marketing"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const records = $input.all().map(item => item.json);\n\nreturn [\n  {\n    json: { records }   // ✅ now json points to an object\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "4f3739b0-35d4-4b69-a8d2-b21c66531b42",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Search records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "5d75fc05-62a9-432e-aa29-84529c4d1408",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5bfd900429bc03d19f786fd8066e6e6027bc44c0d0948a52c021a2343d9a9d99"
+  },
+  "id": "fcFXaSvhgmMzcwua",
+  "tags": []
+}

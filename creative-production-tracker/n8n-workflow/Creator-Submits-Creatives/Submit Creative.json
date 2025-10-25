@@ -1,0 +1,631 @@
+{
+  "name": "Submit Creative",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "submit-creative",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "fb494500-1364-4430-ab9d-9bb4dfbe284f",
+      "name": "Webhook",
+      "webhookId": "f82e5939-4f24-4f04-ab27-9af45548d2ab"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "app1n6xH9LXVtj9Jd",
+          "mode": "list",
+          "cachedResultName": "Creative Submission Tracker",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblIWva9v5WqhfIFv",
+          "mode": "list",
+          "cachedResultName": "Creative Submissions",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd/tblIWva9v5WqhfIFv"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Creative Link": "={{ $json.body.fileLink }}",
+            "Campaign": "={{ $json.body.selectedCampaign }}",
+            "Status": "Submitted",
+            "Notes": "={{ $json.body.notes }}",
+            "Submission Date": "={{ $json.body.deadline }}"
+          },
+          "matchingColumns": [
+            "Campaign"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Submitted By",
+              "displayName": "Submitted By",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Campaign",
+              "displayName": "Campaign",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Platform",
+              "displayName": "Platform",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Reel",
+                  "value": "Reel"
+                },
+                {
+                  "name": "Video",
+                  "value": "Video"
+                },
+                {
+                  "name": "Image",
+                  "value": "Image"
+                },
+                {
+                  "name": "Content",
+                  "value": "Content"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Creative Guidelines",
+              "displayName": "Creative Guidelines",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Creative Link",
+              "displayName": "Creative Link",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Submission Date",
+              "displayName": "Submission Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Draft",
+                  "value": "Draft"
+                },
+                {
+                  "name": "Submitted",
+                  "value": "Submitted"
+                },
+                {
+                  "name": "Approved",
+                  "value": "Approved"
+                },
+                {
+                  "name": "Rejected",
+                  "value": "Rejected"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Reviewer Email Id",
+              "displayName": "Reviewer Email Id",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Attachments",
+              "displayName": "Attachments",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        256,
+        0
+      ],
+      "id": "dbb597b4-cb8f-436d-aa4e-e0c4f8bbc522",
+      "name": "Update Creator Record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "ifIfK8xD5lLhQnLi",
+          "name": "Marketing"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "ghatakmeghna94@gmail.com",
+        "subject": "Action Needed: Review the Latest Campaign Update",
+        "message": "=<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\" />\n    <title>New Campaign Submission</title>\n    <style>\n      body {\n        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n        background-color: #f4f6f8;\n        margin: 0;\n        padding: 0;\n      }\n      .container {\n        width: 100%;\n        max-width: 600px;\n        margin: 40px auto;\n        background-color: #ffffff;\n        border-radius: 8px;\n        box-shadow: 0 4px 12px rgba(0,0,0,0.1);\n        overflow: hidden;\n      }\n      .header {\n        background-color: #4f46e5;\n        color: white;\n        padding: 20px;\n        text-align: center;\n        font-size: 22px;\n        font-weight: bold;\n      }\n      .content {\n        padding: 20px;\n        color: #1f2937;\n        line-height: 1.6;\n      }\n      .content h2 {\n        color: #4f46e5;\n        font-size: 18px;\n      }\n      .campaign-details {\n        background-color: #f0f4ff;\n        padding: 15px;\n        border-radius: 6px;\n        margin: 15px 0;\n      }\n      .campaign-details p {\n        margin: 5px 0;\n      }\n      .cta {\n        display: inline-block;\n        padding: 12px 20px;\n        background-color: #4f46e5;\n        color: #fffff;\n        text-decoration: none;\n        border-radius: 6px;\n        margin-top: 15px;\n        font-weight: bold;\n      }\n      .footer {\n        text-align: center;\n        font-size: 12px;\n        color: #9ca3af;\n        padding: 15px;\n      }\n    </style>\n  </head>\n  <body>\n    <div class=\"container\">\n      <div class=\"header\">\n        New Campaign Submission\n      </div>\n      <div class=\"content\">\n        <p>Hi <strong>Reviewer Name</strong>,</p>\n        <p>\n          A creator has updated a campaign in the system and your review is required. \n          Please find the details below:\n        </p>\n        <div class=\"campaign-details\">\n          <p><strong>Campaign Name:</strong> {{ $json.fields.Campaign }}</p>\n          <p><strong>Platform:</strong> {{ $json.fields.Platform }}</p>\n          <p><strong>Creative Type:</strong> {{ $json.fields.Type }}</p>\n          <p><strong>Submitted By:</strong> {{ $json.fields['Submission Date'] }}</p>\n<p><strong>Notes:</strong> {{ $json.fields.Notes || \"No notes\"}}</p>\n        </div>\n        <p>\n          Kindly review the submission at your earliest convenience to ensure timely progress.\n        </p>\n        <a class=\"cta\" href=\"{{ $json.fields['Creative Link'] }}\" target=\"_blank\" style=\"color:#ffff\">Review Campaign</a>\n      </div>\n      <div class=\"footer\">\n        This is an automated message from <strong>Your Company Name</strong>. Please do not reply to this email.\n      </div>\n    </div>\n  </body>\n</html>\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        464,
+        0
+      ],
+      "id": "50a70938-25cd-46f1-8486-d3d99a0d9027",
+      "name": "Send mail to Reviewer",
+      "webhookId": "9a4f44b9-dac0-4190-b002-e952c4af4a20",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "XOuI3RaS6ZV3Cx7E",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "app1n6xH9LXVtj9Jd",
+          "mode": "list",
+          "cachedResultName": "Creative Submission Tracker",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tble6lr7cW36zgmua",
+          "mode": "list",
+          "cachedResultName": "Creative Briefs",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd/tble6lr7cW36zgmua"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Campaign": "={{ $('Update Creator Record').item.json.fields.Campaign }}",
+            "Status": "In Review",
+            "Creative Link": "={{ $('Update Creator Record').item.json.fields['Creative Link'] }}",
+            "Notes": "={{ $('Update Creator Record').item.json.fields.Notes }}"
+          },
+          "matchingColumns": [
+            "Campaign"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brief Title",
+              "displayName": "Brief Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Campaign",
+              "displayName": "Campaign",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Platform",
+              "displayName": "Platform",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Select",
+              "displayName": "Select",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Video",
+                  "value": "Video"
+                },
+                {
+                  "name": "Image",
+                  "value": "Image"
+                },
+                {
+                  "name": "Reel",
+                  "value": "Reel"
+                },
+                {
+                  "name": "Content",
+                  "value": "Content"
+                },
+                {
+                  "name": "Audio",
+                  "value": "Audio"
+                },
+                {
+                  "name": "Design",
+                  "value": "Design"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Guidelines Summary",
+              "displayName": "Guidelines Summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Deadline",
+              "displayName": "Deadline",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "AssignedTo",
+              "displayName": "AssignedTo",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Assigned Email Id",
+              "displayName": "Assigned Email Id",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Review By",
+              "displayName": "Review By",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Draft",
+                  "value": "Draft"
+                },
+                {
+                  "name": "In Review",
+                  "value": "In Review"
+                },
+                {
+                  "name": "Approved",
+                  "value": "Approved"
+                },
+                {
+                  "name": "Archived",
+                  "value": "Archived"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Creative Link",
+              "displayName": "Creative Link",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Campaign Status",
+              "displayName": "Campaign Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign Start Date",
+              "displayName": "Campaign Start Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign End Date",
+              "displayName": "Campaign End Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Number of Linked Creatives",
+              "displayName": "Number of Linked Creatives",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Creatives",
+              "displayName": "Creatives",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Latest Creative Submission Date",
+              "displayName": "Latest Creative Submission Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Guideline Clarity Score",
+              "displayName": "Guideline Clarity Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        672,
+        0
+      ],
+      "id": "995921c0-da8f-4f29-9d78-5b051617aefd",
+      "name": "Update Reviewer Sheet",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "ifIfK8xD5lLhQnLi",
+          "name": "Marketing"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Update Creator Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Creator Record": {
+      "main": [
+        [
+          {
+            "node": "Send mail to Reviewer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send mail to Reviewer": {
+      "main": [
+        [
+          {
+            "node": "Update Reviewer Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "525a31b0-bfb5-4046-aa31-10aecf661890",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5bfd900429bc03d19f786fd8066e6e6027bc44c0d0948a52c021a2343d9a9d99"
+  },
+  "id": "TBwhW3FRE9pjSttn",
+  "tags": []
+}

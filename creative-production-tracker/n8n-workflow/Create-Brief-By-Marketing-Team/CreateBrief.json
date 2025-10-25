@@ -1,0 +1,617 @@
+{
+  "name": "CreateBrief",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "create-brief",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "0dde55e7-448b-4c1b-8283-5ce66d4f52b6",
+      "name": "Webhook",
+      "webhookId": "3203e57a-1368-4750-af3c-6d2d5c344e5d"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "app1n6xH9LXVtj9Jd",
+          "mode": "list",
+          "cachedResultName": "Creative Submission Tracker",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tble6lr7cW36zgmua",
+          "mode": "list",
+          "cachedResultName": "Creative Briefs",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd/tble6lr7cW36zgmua"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Brief Title": "={{ $json.body.briefTitle }}",
+            "Campaign": "={{ $json.body.campaignName }}",
+            "Platform": "={{ $json.body.platform }}",
+            "Deadline": "={{ $json.body.deadline }}",
+            "Select": "={{ $json.body.type }}",
+            "AssignedTo": "={{ $json.body.assignedTo }}",
+            "Assigned Email Id": "ghatakmeghna94@gmail.com",
+            "Guidelines Summary": "={{ $json.body.guidelines }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Brief Title",
+              "displayName": "Brief Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Campaign",
+              "displayName": "Campaign",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Platform",
+              "displayName": "Platform",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Select",
+              "displayName": "Select",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Video",
+                  "value": "Video"
+                },
+                {
+                  "name": "Image",
+                  "value": "Image"
+                },
+                {
+                  "name": "Reel",
+                  "value": "Reel"
+                },
+                {
+                  "name": "Content",
+                  "value": "Content"
+                },
+                {
+                  "name": "Audio",
+                  "value": "Audio"
+                },
+                {
+                  "name": "Design",
+                  "value": "Design"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Guidelines Summary",
+              "displayName": "Guidelines Summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Deadline",
+              "displayName": "Deadline",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "AssignedTo",
+              "displayName": "AssignedTo",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Assigned Email Id",
+              "displayName": "Assigned Email Id",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Review By",
+              "displayName": "Review By",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Draft",
+                  "value": "Draft"
+                },
+                {
+                  "name": "In Review",
+                  "value": "In Review"
+                },
+                {
+                  "name": "Approved",
+                  "value": "Approved"
+                },
+                {
+                  "name": "Archived",
+                  "value": "Archived"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Campaign Status",
+              "displayName": "Campaign Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign Start Date",
+              "displayName": "Campaign Start Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign End Date",
+              "displayName": "Campaign End Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Number of Linked Creatives",
+              "displayName": "Number of Linked Creatives",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Creatives",
+              "displayName": "Creatives",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Latest Creative Submission Date",
+              "displayName": "Latest Creative Submission Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Guideline Clarity Score",
+              "displayName": "Guideline Clarity Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "8eb88aa4-3f78-48f9-a3c6-5565fda4f693",
+      "name": "Create Brief",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "ifIfK8xD5lLhQnLi",
+          "name": "Marketing"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nreturn items.map(item => {\n  const body = item.json.body || {};\n  \n  if (body.deadline) {\n    const deadlineDate = new Date(body.deadline);\n    // Only convert if it's a valid date\n    if (!isNaN(deadlineDate)) {\n      body.deadline = deadlineDate.toISOString();\n    }\n  }\n\n  return { json: { ...item.json, body } };\n});\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "dc0d8407-c6ff-4a65-95bc-67ea11cab5d8",
+      "name": "Convert deadline to ISO"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.fields['Assigned Email Id'] }}",
+        "subject": "=🎯 New Campaign Assigned: {{ $json.fields['Brief Title'] }}",
+        "message": "=<html>\n  <body style=\"font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333;\">\n    <div style=\"max-width: 600px; margin: auto; border: 1px solid #eee; border-radius: 10px; padding: 20px;\">\n      <h2 style=\"color: #2b7a78;\">Hi {{ $json.fields.AssignedTo }},</h2>\n\n      <p>\n        You’ve been assigned a new marketing campaign brief. Please review the details below and start working on the creative as per the guidelines.\n      </p>\n\n      <div style=\"background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 10px;\">\n        <p><strong>📢 Campaign Name:</strong> {{ $json.fields.Campaign }}</p>\n        <p><strong>💻 Platform:</strong> {{ $json.fields.Platform }}</p>\n        <p><strong>🎨 Creative Type:</strong> {{ $json.fields.Select }}</p>\n<p><strong>🎨 Guidelines:</strong> {{ $json.fields['Guidelines Summary'] }}</p>\n        <p><strong>📅 Deadline:</strong> {{ $json.fields.Deadline }}</p>\n      </div>\n\n      <p style=\"margin-top: 20px;\">\n        Please log in to your <strong>Creator Dashboard</strong> to view the full brief and upload your final creative before the deadline.\n      </p>\n\n      <p style=\"margin-top: 20px;\">If you have any questions or need clarification, feel free to reach out to the marketing team.</p>\n\n      <p style=\"margin-top: 25px;\">Best regards,<br><strong>The Marketing Team</strong><br>Creative Campaigns Division</p>\n    </div>\n  </body>\n</html>\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        624,
+        0
+      ],
+      "id": "cbd32e7a-da89-4bcf-8653-ff89503a962a",
+      "name": "Send mail to Creator",
+      "webhookId": "dab7a348-a5e7-49c5-8eb8-4fc8bf7d54f1",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "XOuI3RaS6ZV3Cx7E",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "app1n6xH9LXVtj9Jd",
+          "mode": "list",
+          "cachedResultName": "Creative Submission Tracker",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblIWva9v5WqhfIFv",
+          "mode": "list",
+          "cachedResultName": "Creative Submissions",
+          "cachedResultUrl": "https://airtable.com/app1n6xH9LXVtj9Jd/tblIWva9v5WqhfIFv"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Campaign": "={{ $('Create Brief').item.json.fields.Campaign }}",
+            "Submitted By": "={{ $('Create Brief').item.json.fields.AssignedTo }}",
+            "Platform": "={{ $('Create Brief').item.json.fields.Platform }}",
+            "Type": "={{ $('Create Brief').item.json.fields.Select }}",
+            "Creative Guidelines": "={{ $('Create Brief').item.json.fields['Guidelines Summary'] }}",
+            "Status": "Draft"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Submitted By",
+              "displayName": "Submitted By",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Campaign",
+              "displayName": "Campaign",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Platform",
+              "displayName": "Platform",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Reel",
+                  "value": "Reel"
+                },
+                {
+                  "name": "Video",
+                  "value": "Video"
+                },
+                {
+                  "name": "Image",
+                  "value": "Image"
+                },
+                {
+                  "name": "Content",
+                  "value": "Content"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Creative Guidelines",
+              "displayName": "Creative Guidelines",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Creative Link",
+              "displayName": "Creative Link",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Submission Date",
+              "displayName": "Submission Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Draft",
+                  "value": "Draft"
+                },
+                {
+                  "name": "Submitted",
+                  "value": "Submitted"
+                },
+                {
+                  "name": "Approved",
+                  "value": "Approved"
+                },
+                {
+                  "name": "Rejected",
+                  "value": "Rejected"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Reviewer Email Id",
+              "displayName": "Reviewer Email Id",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Attachments",
+              "displayName": "Attachments",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        832,
+        0
+      ],
+      "id": "dfd888c8-92ff-4efb-831c-75c947895178",
+      "name": "Create Assigned Record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "ifIfK8xD5lLhQnLi",
+          "name": "Marketing"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Convert deadline to ISO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Brief": {
+      "main": [
+        [
+          {
+            "node": "Send mail to Creator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert deadline to ISO": {
+      "main": [
+        [
+          {
+            "node": "Create Brief",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send mail to Creator": {
+      "main": [
+        [
+          {
+            "node": "Create Assigned Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "918bd348-8f25-4e6c-833b-f1894493826d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5bfd900429bc03d19f786fd8066e6e6027bc44c0d0948a52c021a2343d9a9d99"
+  },
+  "id": "t4uqeB3XHmTqrCFf",
+  "tags": []
+}
