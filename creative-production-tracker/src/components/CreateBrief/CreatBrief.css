@@ -1,0 +1,121 @@
+/* =========================
+   Global & Layout
+========================= */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ff6bcb, #845ec2, #0081cf);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   Card Styling
+========================= */
+.brief-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brief-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  padding: 40px 50px;
+  max-width: 420px;
+  width: 90%;
+  animation: slideIn 0.8s ease;
+}
+
+/* =========================
+   Title
+========================= */
+.brief-title {
+  text-align: center;
+  color: #4a148c;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(74, 20, 140, 0.2);
+}
+
+/* =========================
+   Form Fields
+========================= */
+.brief-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.brief-form input {
+  padding: 12px;
+  border: 2px solid #c5a5ff;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+  outline: none;
+}
+
+.brief-form input:focus {
+  border-color: #845ec2;
+  box-shadow: 0 0 8px rgba(132, 94, 194, 0.5);
+  transform: scale(1.02);
+}
+
+/* =========================
+   Button Styling
+========================= */
+.brief-form button {
+  padding: 12px;
+  background: linear-gradient(90deg, #ff6bcb, #845ec2);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(132, 94, 194, 0.3);
+}
+
+.brief-form button:hover {
+  background: linear-gradient(90deg, #ff8fab, #5f2c82);
+  box-shadow: 0 8px 20px rgba(95, 44, 130, 0.4);
+  transform: translateY(-2px);
+}
+
+.brief-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

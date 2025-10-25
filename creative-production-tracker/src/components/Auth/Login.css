@@ -1,0 +1,139 @@
+/* ===========================
+   Background & Layout
+=========================== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #845ec2, #ff6bcb, #ff9671, #ffc75f);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===========================
+   Login Card
+=========================== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  padding: 40px 50px;
+  width: 380px;
+  animation: fadeSlide 1s ease;
+  text-align: center;
+}
+
+/* ===========================
+   Titles
+=========================== */
+.login-title {
+  font-size: 1.8rem;
+  color: #4a148c;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(74, 20, 140, 0.2);
+}
+
+.login-subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* ===========================
+   Role Selector
+=========================== */
+.role-switch {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.role-switch label {
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+}
+
+.role-switch input {
+  margin-right: 6px;
+  accent-color: #845ec2;
+}
+
+/* ===========================
+   Form Inputs
+=========================== */
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #c5a5ff;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+.login-form input:focus {
+  border-color: #845ec2;
+  box-shadow: 0 0 8px rgba(132, 94, 194, 0.5);
+  transform: scale(1.02);
+}
+
+/* ===========================
+   Button
+=========================== */
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #ff6bcb, #845ec2);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(132, 94, 194, 0.3);
+}
+
+.login-form button:hover {
+  background: linear-gradient(90deg, #ff9671, #5f2c82);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(95, 44, 130, 0.4);
+}
+
+/* ===========================
+   Animations
+=========================== */
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

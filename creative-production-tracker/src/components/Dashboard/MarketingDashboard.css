@@ -1,0 +1,251 @@
+/* Base */
+.marketing-dashboard {
+    width: 100%;
+  /* background: linear-gradient(135deg, #ff9966, #ff5e62); */
+    background: linear-gradient(135deg, #ffff, #f1f1f1);
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  border-radius: 10px;
+  min-width: 1100px;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar h2 {
+  color: #012a4a;
+  font-weight: 700;
+  margin: 0;
+}
+
+.logout-btn {
+  background: #ff477e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background: #e6396f;
+}
+
+/* Layout */
+.dashboard-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.open-form-btn {
+  padding: 12px;
+  background: linear-gradient(90deg, #ff6bcb, #845ec2);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(132, 94, 194, 0.3);
+}
+
+.open-form-btn:hover {
+   background: linear-gradient(90deg, #ff9671, #5f2c82);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(95, 44, 130, 0.4);
+}
+
+/* Approval section */
+.approval-section {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.approval-section h3 {
+  color: #012a4a;
+  margin-bottom: 15px;
+}
+
+.submission-card {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.submission-card h4 {
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.submission-card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.submission-card a:hover {
+  text-decoration: underline;
+}
+.submission-list{
+  max-height: 400px;
+  overflow-y: auto;
+}
+.submission-list::-webkit-scrollbar {
+  width: 8px;
+}
+.submission-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.action-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.action-btns button {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.action-btns button:first-child {
+  background: #28a745;
+  color: #fff;
+}
+
+.action-btns button:last-child {
+  background: #dc3545;
+  color: #fff;
+}
+
+.status {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status.pending {
+  color: orange;
+}
+
+.status.approved {
+  color: green;
+}
+
+.status.rejected {
+  color: red;
+}
+
+/* Modal popup */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.brief-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.brief-form input, .brief-form select, .brief-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.brief-form input:focus, .brief-form select:focus, .brief-form textarea:focus {
+  border-color: #845ec2;
+  box-shadow: 0 0 8px rgba(132, 94, 194, 0.5);
+  transform: scale(1.02);
+}
+
+.brief-form button {
+  padding: 12px;
+  background: linear-gradient(90deg, #ff6bcb, #845ec2);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(132, 94, 194, 0.3);
+}
+
+.brief-form button:hover {
+  background: linear-gradient(90deg, #ff8fab, #5f2c82);
+  box-shadow: 0 8px 20px rgba(95, 44, 130, 0.4);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
