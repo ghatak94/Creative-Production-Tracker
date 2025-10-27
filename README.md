@@ -8,20 +8,20 @@ It provides role-based dashboards — Creator, Reviewer, and Marketing — with 
 ## 🚀 Key Features
 
 ✅ 🔐 Role-Based Login System
-    Creators: Submit campaign creatives (images, videos, or scripts).
-    Marketing Team: Create and assign creative briefs for the creator team.
-    Reviewers: Receive submissions automatically via email and approve or reject directly.
+- Creators: Submit campaign creatives (images, videos, or scripts).
+- Marketing Team: Create and assign creative briefs for the creator team.
+- Reviewers: Receive submissions automatically via email and approve or reject directly.
 
 ✅ 📊 Dynamic Dashboards
-    Personalized dashboards for each role.
+- Personalized dashboards for each role.
 
 ✅ 📧 Automated Notifications
-    When creators submit a project, an automated email is sent to reviewers.
-    Status changes trigger real-time updates and follow-up emails.
+- When creators submit a project, an automated email is sent to reviewers.
+- Status changes trigger real-time updates and follow-up emails.
 
 ✅ 🗃️ Airtable Integration
-    Stores all project data: campaign name, brief, creator, status, review notes, and timestamps.
-    Updates automatically when any user submits or edits data.
+- Stores all project data: campaign name, brief, creator, status, review notes, and timestamps.
+- Updates automatically when any user submits or edits data.
 
 ## 🧠 Workflow, UI and Email Flow
 
