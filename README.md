@@ -23,7 +23,7 @@ It provides role-based dashboards — Creator, Reviewer, and Marketing — with 
     Stores all project data: campaign name, brief, creator, status, review notes, and timestamps.
     Updates automatically when any user submits or edits data.
 
-🧠 Workflow, UI and Email Flow
+## 🧠 Workflow, UI and Email Flow
 
 1. Login Page Design 
    
