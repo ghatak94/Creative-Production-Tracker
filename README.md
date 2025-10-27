@@ -57,5 +57,5 @@ It provides role-based dashboards — Creator, Reviewer, and Marketing — with 
 
 - 👩‍💻 Meghna Ghatak 
 - Role: UI Developer & Automation Workflow Specialist
-- Expertise: React.js • n8n • Power Automate • OpenAI API • Airtable
+- Expertise: React.js • n8n  • OpenAI API • Airtable
 - Focus: Building smart, automated workflows for creative production teams.
