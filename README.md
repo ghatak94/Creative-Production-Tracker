@@ -25,19 +25,33 @@ It provides role-based dashboards — Creator, Reviewer, and Marketing — with 
 
 🧠 Workflow, UI and Email Flow
 
-1. ![alt text](UI-Look/Login-Page.png)
+1. Login Page Design 
+   
+   ![alt text](UI-Look/Login-Page.png)
 
-2. ![alt text](UI-Look/Creator-Dashboard.png)
+2. Creator Dashboard where creator submits creatives.
 
-3. ![alt text](creative-production-tracker/n8n-workflow/Creator-Submits-Creatives/Submit-Creative-n8n.png)
+   ![alt text](UI-Look/Creator-Dashboard.png)
 
-4. ![alt text](creative-production-tracker/n8n-workflow/Creator-Submits-Creatives/Action-Needed-Review-the-Latest-Campaign-Update-Gmail.png)
+3. Creator Submits Creative Workflow 
+   
+   ![alt text](creative-production-tracker/n8n-workflow/Creator-Submits-Creatives/Submit-Creative-n8n.png)
 
-5. ![alt text](UI-Look/Create-Brief-By-Marketing-Team.png)
+4. Sends mail to reviewer / Marketing Team for review
+   
+   ![alt text](creative-production-tracker/n8n-workflow/Creator-Submits-Creatives/Action-Needed-Review-the-Latest-Campaign-Update-Gmail.png)
 
-6. ![alt text](creative-production-tracker/n8n-workflow/Create-Brief-By-Marketing-Team/CreateBrief-n8n.png)
+5. Create Breif By Marketing Team UI Design
+   
+   ![alt text](UI-Look/Create-Brief-By-Marketing-Team.png)
 
-7. ![alt text](creative-production-tracker/n8n-workflow/Create-Brief-By-Marketing-Team/New-Campaign-Assigned.png)
+6. Create Brief Workflow 
+   
+   ![alt text](creative-production-tracker/n8n-workflow/Create-Brief-By-Marketing-Team/CreateBrief-n8n.png)
+
+7. Send Notification to Creator
+   
+   ![alt text](creative-production-tracker/n8n-workflow/Create-Brief-By-Marketing-Team/New-Campaign-Assigned.png)
 
 ## 🧑‍💻 Author
 
